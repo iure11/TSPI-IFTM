@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista-2</title>
+    <script>
+ const vetAges = [10, 18, 45, 64, 50];
+
+ const sumAges = (vet) => vet.reduce((acc, cur) => (acc + cur), 0);
+ const sumAgesMed = (vet) => vet.reduce((acc, cur) => (acc + cur) / 5, 0);
+ const maxAge = (vet) => vet.reduce((acc, cur) => acc > cur ? acc : cur);
+ const oddAges = (vet) => vet.filter(num => num % 2 !== 0);
+ const isAdult = (vet) => vet.every(num => num >= 18);
+ const isGreaterThanOrEqualTo = (vet, minAge) => vet.every(age => age >= minAge);
+
+ const userAge = prompt("Valores que são maiores ou iguais a:");
+ const userAges = prompt("Idades maiores ou iguais a:");
+ const userAgesMaxEqual = prompt("Média das idades maiores ou iguais a:");
+
+ document.write(`<p>Soma das idades = ${sumAges(vetAges)}</p>`);
+ document.write(`<p>Media das idades = ${sumAgesMed(vetAges)}</p>`);
+ document.write(`<p>Maior idade = ${maxAge(vetAges)}</p>`);
+ document.write(`<p>Idades ímpares: ${oddAges(vetAges)}</p>`);
+ document.write(`<p>Todos são maiores de idade? ${isAdult(vetAges)}</p>`);
+ document.write(`<p>Todos os valores são maiores ou iguais a ${userAge}? ${isGreaterThanOrEqualTo(vetAges, userAge)}</p>`);
+ document.write(`<p>As idades iguais ou maiores que ${userAges}: ${vetAges.filter(age => age >= userAges).join(", ")}</p>`);
+ document.write(`Média das idades maiores ou iguais a: ${userAgesMaxEqual}: ${vetAges.filter(age => age >= userAgesMaxEqual).reduce((acc, cur) => acc + cur, 0) / vetAges.filter(age => age >= userAgesMaxEqual).length.toFixed(2)}`)
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
