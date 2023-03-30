@@ -1,0 +1,22 @@
+{
+    "smartphones": [
+        {
+            "id": 1,
+            "marca": "Samsung",
+            "modelo": "Smartphone S12",
+            "valor": 5000.00
+        },
+        {
+            "id": 2,
+            "marca": "Motorola",
+            "modelo": "Smartphone Moto G20",
+            "valor": 1300.00
+        },
+        {
+            "id": 3,
+            "marca": "Apple",
+            "modelo": "Smartphone Iphone 12",
+            "valor": 4309.00
+        }
+    ]
+}
