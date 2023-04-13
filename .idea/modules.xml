@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/TSPI-IFTM.iml" filepath="$PROJECT_DIR$/.idea/TSPI-IFTM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/erfe.iml" filepath="$PROJECT_DIR$/erfe.iml" />
     </modules>
   </component>
 </project>
