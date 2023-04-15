@@ -1,4 +1,4 @@
-package atividade4;
+package atividade5;
 
 public class Main {
     public static void main(String[] args) {

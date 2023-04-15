@@ -1,4 +1,4 @@
-package atividade4;
+package atividade5;
 
 public class Diretor extends Funcionario {
     public Diretor(double salarioBase) {
