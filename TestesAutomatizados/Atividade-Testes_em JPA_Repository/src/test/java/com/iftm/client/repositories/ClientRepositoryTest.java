@@ -20,9 +20,6 @@ public class ClientRepositoryTest {
     @Autowired
     private ClientRepository repositorio;
 
-
-
-
     /**
      * Cenário de Teste 1
      * Objetivo: Verificar se a busca por id realmente retorna o cliente correto.
@@ -182,7 +179,6 @@ public class ClientRepositoryTest {
 
     }
 
-
     // TESTE DATA
     @Test
     public void testFindClientsByBirthDateBetween() {
@@ -213,12 +209,5 @@ public class ClientRepositoryTest {
         assertEquals("João Silva", clienteAtualizado.getName());
         assertEquals(2000.0, clienteAtualizado.getIncome(), 0.001);
         assertEquals(Instant.parse("1990-01-01T00:00:00Z"), clienteAtualizado.getBirthDate());
-
     }
-
-
-
-
-
-
 }
