@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/POO-JAVA/Ex_interface/Ex_interface.iml" filepath="$PROJECT_DIR$/POO-JAVA/Ex_interface/Ex_interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO-JAVA/exercicios_solid/SRP/SRP.iml" filepath="$PROJECT_DIR$/POO-JAVA/exercicios_solid/SRP/SRP.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/TSPI-IFTM.iml" filepath="$PROJECT_DIR$/.idea/TSPI-IFTM.iml" />
       <module fileurl="file://$PROJECT_DIR$/Projetos-JS/teste.iml" filepath="$PROJECT_DIR$/Projetos-JS/teste.iml" />
     </modules>
