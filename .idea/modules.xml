@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/TSPI-IFTM.iml" filepath="$PROJECT_DIR$/.idea/TSPI-IFTM.iml" />
       <module fileurl="file://$PROJECT_DIR$/POO-JAVA/exercicios_solid/ISP/imposto/imposto.iml" filepath="$PROJECT_DIR$/POO-JAVA/exercicios_solid/ISP/imposto/imposto.iml" />
       <module fileurl="file://$PROJECT_DIR$/POO-JAVA/exercicios_solid/LSP/loja_virtual/loja_virtual.iml" filepath="$PROJECT_DIR$/POO-JAVA/exercicios_solid/LSP/loja_virtual/loja_virtual.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO-JAVA/exercicios_solid/DIP/pagamento_imposto/pagamento_imposto.iml" filepath="$PROJECT_DIR$/POO-JAVA/exercicios_solid/DIP/pagamento_imposto/pagamento_imposto.iml" />
       <module fileurl="file://$PROJECT_DIR$/Projetos-JS/teste.iml" filepath="$PROJECT_DIR$/Projetos-JS/teste.iml" />
     </modules>
   </component>
