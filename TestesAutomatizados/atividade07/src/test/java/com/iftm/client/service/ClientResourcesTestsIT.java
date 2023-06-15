@@ -94,7 +94,7 @@ public class ClientResourcesTestsIT{
         result.andExpect(jsonPath("$.content[0].name").value("Carolina Maria de Jesus"));
         result.andExpect(jsonPath("$.content[1].name").value("Chimamanda Adichie"));
     }
-
+ // Mudar o nome para testar, linha 107 e 127
     @Test
     public void updateShouldReturnOkWhenIdExists() throws Exception {
         // Id do cliente a ser atualizado
@@ -103,7 +103,7 @@ public class ClientResourcesTestsIT{
         // Crie um objeto ClientDTO com os dados que você deseja atualizar
         ClientDTO clientDTO = new ClientDTO(
                 null,
-                "Joãaao",
+                "Joãao",
                 "123456789",
                 5000.0,
                 Instant.parse("1990-01-01T00:00:00Z"),
@@ -124,6 +124,6 @@ public class ClientResourcesTestsIT{
 
         // Verifique se o corpo da resposta contém os atributos desejados
         result.andExpect(jsonPath("$.id").exists());
-        result.andExpect(jsonPath("$.name").value("Joãaao"));
+        result.andExpect(jsonPath("$.name").value("Joãao"));
     }
 }
