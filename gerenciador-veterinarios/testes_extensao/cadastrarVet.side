@@ -1,0 +1,179 @@
+{
+  "id": "f8cd13de-fd2b-4cdf-86f9-86b27fa3df52",
+  "version": "2.0",
+  "name": "cadastrarVet",
+  "url": "http://localhost:8080",
+  "tests": [{
+    "id": "389135eb-cbe1-427b-85bf-ffe2d548a070",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "8ad0a054-ac87-4a2d-8241-fb01e2722a7b",
+    "name": "cadastrarVet",
+    "commands": [{
+      "id": "13155c72-c516-47dc-9249-551d2a462bac",
+      "comment": "",
+      "command": "open",
+      "target": "/home",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "04421ef5-6e09-414e-a07d-b47ef03985e3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b90943d2-bed9-4fc0-b8ef-16143323e9a9",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(3) > .btn",
+      "targets": [
+        ["css=a:nth-child(3) > .btn", "css:finder"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Adicionar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab8b4a82-22a8-4bb6-a24c-8c75705b9b82",
+      "comment": "",
+      "command": "click",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "457f96bb-0eb0-4c1c-93ed-edfb1869e889",
+      "comment": "",
+      "command": "type",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Iure"
+    }, {
+      "id": "3d7a9b19-c9e2-478b-92cd-445baa1ddc80",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputEmail",
+      "targets": [
+        ["id=inputEmail", "id"],
+        ["name=email", "name"],
+        ["css=#inputEmail", "css:finder"],
+        ["xpath=//input[@id='inputEmail']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "iure@"
+    }, {
+      "id": "630a96ab-1c95-4221-bf08-fcbb0bea3464",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputEmail",
+      "targets": [
+        ["id=inputEmail", "id"],
+        ["name=email", "name"],
+        ["css=#inputEmail", "css:finder"],
+        ["xpath=//input[@id='inputEmail']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2af0a5e1-0d66-46c1-9f0c-988ab82d205d",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputEmail",
+      "targets": [
+        ["id=inputEmail", "id"],
+        ["name=email", "name"],
+        ["css=#inputEmail", "css:finder"],
+        ["xpath=//input[@id='inputEmail']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "iure@teste.com"
+    }, {
+      "id": "5b4d3c08-ceaa-44ee-a656-0b58796bd4e4",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputEspecialidade",
+      "targets": [
+        ["id=inputEspecialidade", "id"],
+        ["name=especialidade", "name"],
+        ["css=#inputEspecialidade", "css:finder"],
+        ["xpath=//input[@id='inputEspecialidade']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b28785e8-5f13-45d5-a650-fb0137f7dd84",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputEspecialidade",
+      "targets": [
+        ["id=inputEspecialidade", "id"],
+        ["name=especialidade", "name"],
+        ["css=#inputEspecialidade", "css:finder"],
+        ["xpath=//input[@id='inputEspecialidade']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "Pequeno porte"
+    }, {
+      "id": "92423f4f-fe21-4412-9b6e-5bbe3587f481",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputSalario",
+      "targets": [
+        ["id=inputSalario", "id"],
+        ["name=salario", "name"],
+        ["css=#inputSalario", "css:finder"],
+        ["xpath=//input[@id='inputSalario']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6a766323-7100-4914-a921-c18d25209c63",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputSalario",
+      "targets": [
+        ["id=inputSalario", "id"],
+        ["name=salario", "name"],
+        ["css=#inputSalario", "css:finder"],
+        ["xpath=//input[@id='inputSalario']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "7000"
+    }, {
+      "id": "9e06db13-d19b-4c49-8a02-0628d324b019",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Cadastrar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "9bc6e16f-3769-4648-8c80-985be272dba5",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["389135eb-cbe1-427b-85bf-ffe2d548a070"]
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}
