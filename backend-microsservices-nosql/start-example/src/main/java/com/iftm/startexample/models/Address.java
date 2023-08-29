@@ -5,13 +5,26 @@ import java.util.Objects;
 public class Address {
     private String street;
     private int number;
+    private String city;
+    private String country;
 
     public Address() {
     }
 
-    public Address(String street, int number) {
+    public Address(String street, int number, String city, String country) {
         this.street = street;
         this.number = number;
+        this.city = city;
+        this.country = country;
+
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public String getStreet() {
@@ -38,16 +51,23 @@ public class Address {
     public int hashCode() {
         return Objects.hash(street, number);
     }
-
     public void setNumber(int number) {
         this.number = number;
     }
 
-    @Override
+   @Override
     public String toString() {
         return "Address{" +
                 "street='" + street + '\'' +
-                ", number='" + number + '\'' +
+                ", number=" + number +
                 '}';
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getCountry() {
+        return country;
     }
 }
