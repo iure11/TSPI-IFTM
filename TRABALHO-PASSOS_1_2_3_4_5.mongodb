@@ -1,0 +1,259 @@
+//Passos 1,2,3
+
+use ("taks")
+
+// db.createCollection("Users", {
+//   validator: {
+//     $jsonSchema: {
+//       bsonType: "object",
+//       required: ["first_name", "last_name", "email", "cell_phone"],
+//       properties: {
+//         _id: {
+//           bsonType: "objectId"
+//         },
+//         first_name: {
+//           bsonType: "string",
+//           description: "Primeiro nome do usuário",
+//           minLength: 5,  
+//           maxLength: 30  
+//         },
+//         last_name: {
+//           bsonType: "string",
+//           description: "Sobrenome do usuário",
+//           minLength: 5,  
+//           maxLength:30  
+//         },
+//         email: {
+//           bsonType: "string",
+//           description: "Endereço de e-mail do usuário",
+//           pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+//         },
+//         cell_phone: {
+//           bsonType: "string",
+//           description: "Número de celular do usuário",
+//           pattern: "^[0-9]{3}-[0-9]{3}-[0-9]{4}$"
+//         }
+//       }
+//     }
+//   }
+// });
+
+// db.createCollection("Projects", {
+//   validator: {
+//     $jsonSchema: {
+//       bsonType: "object",
+//       required: ["name", "start_date", "end_date"],
+//       properties: {
+//         _id: {
+//           bsonType: "objectId"
+//         },
+//         name: {
+//           bsonType: "string",
+//           description: "Nome do projeto",
+//           minLength: 5, 
+//           maxLength: 30 
+//         },
+//         start_date: {
+//           bsonType: "date",
+//           description: "Data de início do projeto"
+//         },
+//         end_date: {
+//           bsonType: "date",
+//           description: "Data de conclusão do projeto"
+//         },
+//         tasks: {
+//           bsonType: "array",
+//           description: "Lista de tarefas associadas ao projeto",
+//           items: {
+//             bsonType: "object",
+//             properties: {
+//               title: {
+//                 bsonType: "string",
+//                 description: "Título da tarefa",
+//                 minLength: 5,  
+//                 maxLength: 30 
+//               },
+//               description: {
+//                 bsonType: "string",
+//                 description: "Descrição da tarefa",
+//                 maxLength: 500 
+//               },
+//               start_date: {
+//                 bsonType: "date",
+//                 description: "Data de início da tarefa"
+//               },
+//               deadline_date: {
+//                 bsonType: "date",
+//                 description: "Data limite para a conclusão da tarefa"
+//               },
+//               priority: {
+//                 bsonType: "int",
+//                 description: "Prioridade da tarefa"
+//               },
+//               status: {
+//                 bsonType: "string",
+//                 description: "Status da tarefa"
+//               },
+//               user_id: {
+//                 bsonType: "objectId",
+//                 description: "Referência ao usuário responsável pela tarefa"
+//               }
+//             },
+//             required: ["title", "start_date", "deadline_date", "priority", "status", "user_id"]
+//           }
+//         }
+//       }
+//     }
+//   }
+// });
+
+// db.Users.insertMany([
+//   {
+//     first_name: "João",
+//     last_name: "Silva",
+//     email: "joao.silva@example.com",
+//     cell_phone: "123-456-7890"
+//   },
+//   {
+//     first_name: "Maria",
+//     last_name: "Pereira",
+//     email: "maria.pereira@example.com",
+//     cell_phone: "123-456-7891"
+//   },
+//   {
+//     first_name: "Carlos",
+//     last_name: "Costa",
+//     email: "carlos.costa@example.com",
+//     cell_phone: "123-456-7892"
+//   },
+//   {
+//     first_name: "Ana",
+//     last_name: "Santos",
+//     email: "ana.santos@example.com",
+//     cell_phone: "123-456-7893"
+//   },
+//   {
+//     first_name: "Pedro",
+//     last_name: "Oliveira",
+//     email: "pedro.oliveira@example.com",
+//     cell_phone: "123-456-7894"
+//   }
+// ]);
+
+
+// Primeiro, recuperamos os IDs dos usuários
+// let users = db.Users.find().toArray();
+
+// Agora, inserimos 30 projetos
+// db.Projects.insertMany([
+//   ...Array(30).fill().map((_, i) => ({
+//     name: `Projeto ${i + 1}`,
+//     start_date: new Date(2023, i % 12, 1), // Apenas para diversificar as datas
+//     end_date: new Date(2023, (i + 3) % 12, 1), 
+//     tasks: Array(1 + i % 5).fill().map((_, j) => ({  // Cada projeto terá de 1 a 5 tarefas
+//       title: `Tarefa ${i + 1}-${j + 1}`,
+//       description: `Descrição da Tarefa ${i + 1}-${j + 1}`,
+//       start_date: new Date(2023, i % 12, j + 1),
+//       deadline_date: new Date(2023, (i + 3) % 12, j + 2),
+//       priority: j + 1,
+//       status: ["Pendente", "Em andamento", "Concluído", "Cancelado"][j % 4],
+//       user_id: users[j % users.length]._id
+//     }))
+//   }))
+// ]);
+
+//Buscar todos os projetos de um usuário específico 
+// let userEmail = "maria.pereira@example.com";
+// let user = db.Users.findOne({email: userEmail});
+// db.Projects.find({"tasks.user_id": user._id});
+
+// let currentDate = new Date();
+// db.Projects.find({"tasks.deadline_date": {$lt: currentDate}, "tasks.status": {$ne: "Concluído"}}, {"tasks.$": 1});
+
+
+//Todos os projetos que começaram ou terminaram no ano de 2023
+// db.Projects.find({start_date: {$gte: new Date(2023, 0, 1), $lt: new Date(2024, 0, 1)}});
+
+//Todos os usuários com número de telefone que termina em '90'
+// db.Users.find({cell_phone: /90$/});
+
+//Todos os projetos que ainda não começaram
+// db.Projects.find({start_date: {$gt: new Date()}});
+
+//Todos os projetos que já terminaram
+//  db.Projects.find({end_date: {$lt: new Date()}});
+
+//Todos os projetos que têm mais de 3 tarefas
+//  db.Projects.find({tasks: {$size: 3}});
+
+//Todos os usuários cujo primeiro nome começa com a letra 'M'
+//  db.Users.find({first_name: /^M/});
+
+//Todos os projetos que têm tarefas atribuídas a mais de um usuário diferente
+// db.Projects.find({"tasks.user_id": {$exists: true}});
+
+//Todos os projetos que não têm tarefas atribuídas
+// db.Projects.find({"tasks.user_id": {$exists: false}});
+// Sem resultados, pois todos os projetos têm tarefas atribuídas
+
+//Todos os projetos com tarefas que estão "Em andamento" e têm prioridade 1
+// db.Projects.find({"tasks.status": "Em andamento", "tasks.priority": 1});
+
+//Todos os usuários cujo sobrenome tem mais de 6 caracteres
+// db.Users.find({last_name: {$regex: /.{6,}/}});
+
+//Quantidade de tarefas por status
+// db.Projects.aggregate([
+//     { $unwind: "$tasks" },
+//     { $group: { _id: "$tasks.status", count: { $sum: 1 } } },
+//     { $sort: { count: -1 } }
+// ]);
+
+//Quantidade de tarefas por status e por prioridade
+//  db.Projects.aggregate([
+//      { $unwind: "$tasks" },
+//      { $group: { _id: { status: "$tasks.status", priority: "$tasks.priority" }, count: { $sum: 1 } } },
+//      { $sort: { count: -1 } }
+//  ]);
+
+//Quantidade de tarefas por status e por prioridade, apenas para tarefas com prioridade maior que 1
+ 
+
+
+//  db.Projects.aggregate([
+//      { $unwind: "$tasks" },
+//      { $match: { "tasks.priority": { $gt: 1 } } },
+//      { $group: { _id: { status: "$tasks.status", priority: "$tasks.priority" }, count: { $sum: 1 } } },
+//      { $sort: { count: -1 } }
+//  ]);
+
+
+// PASSO 5
+
+////Alterar o usuário responsável por uma tarefa específica:
+// let task = db.Projects.findOne({"tasks.title": "Tarefa 1-1"}, {"tasks.$": 1});
+
+//  //Mudar o status de "In Progress" para "Complete" para uma tarefa específica:
+// db.Projects.updateOne({"tasks.title": "Tarefa 1-1"}, {$set: {"tasks.$.status": "Concluído"}});
+
+//  //Atualizar a descrição de uma tarefa específica:
+// db.Projects.updateOne({"tasks.title": "Tarefa 1-1"}, {$set: {"tasks.$.description": "Descrição atualizada"}});
+
+//Atualizar a data de início de uma tarefa específica:
+// db.Projects.updateOne({"tasks.title": "Tarefa 1-1"}, {$set: {"tasks.$.start_date": new Date(2023, 0, 1)}});
+
+//Atualizar a data de conclusão de uma tarefa específica:
+// db.Projects.updateOne({"tasks.title": "Tarefa 1-1"}, {$set: {"tasks.$.deadline_date": new Date(2023, 0, 1)}});
+
+//Passo 6
+//Criar índices
+// db.Projects.createIndex({ "tasks.status": 1 });
+// db.Projects.createIndex({ "start_date": 1 });
+// db.Projects.createIndex({ "tasks.start_date": 1 });
+
+// //Teste a diferença de desempenho
+// db.Projects.find({ "tasks.status": "To-Do" }).explain("executionStats");
+
+
+
+
