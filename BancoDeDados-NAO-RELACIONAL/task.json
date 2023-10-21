@@ -1,0 +1,64 @@
+{
+  "Users": [
+    {
+      "_id": ObjectId("user_id_1"),
+      "first_name": "Nome",
+      "last_name": "Sobrenome",
+      "email": "email@example.com",
+      "cell_phone": "123-456-7890"
+    },
+    {
+      "_id": ObjectId("user_id_2"),
+      "first_name": "Outro",
+      "last_name": "Usuário",
+      "email": "outro@example.com",
+      "cell_phone": "987-654-3210"
+    }
+  ],
+  
+  "Projects": [
+    {
+      "_id": ObjectId("project_id_1"),
+      "name": "Projeto A",
+      "start_date": ISODate("2023-01-01"),
+      "end_date": ISODate("2023-03-31"),
+      "tasks": [
+        {
+          "title": "Tarefa 1",
+          "description": "Descrição da Tarefa 1",
+          "start_date": ISODate("2023-01-05"),
+          "deadline_date": ISODate("2023-01-15"),
+          "priority": 1,
+          "status": "Pendente",
+          "user_id": ObjectId("user_id_1")
+        },
+        {
+          "title": "Tarefa 2",
+          "description": "Descrição da Tarefa 2",
+          "start_date": ISODate("2023-02-10"),
+          "deadline_date": ISODate("2023-02-20"),
+          "priority": 2,
+          "status": "Em Progresso",
+          "user_id": ObjectId("user_id_2")
+        }
+      ]
+    },
+    {
+      "_id": ObjectId("project_id_2"),
+      "name": "Projeto B",
+      "start_date": ISODate("2023-02-15"),
+      "end_date": ISODate("2023-04-30"),
+      "tasks": [
+        {
+          "title": "Tarefa 3",
+          "description": "Descrição da Tarefa 3",
+          "start_date": ISODate("2023-03-01"),
+          "deadline_date": ISODate("2023-03-15"),
+          "priority": 3,
+          "status": "Concluída",
+          "user_id": ObjectId("user_id_1")
+        }
+      ]
+    }
+  ]
+}
